@@ -1,0 +1,103 @@
+header {
+    min-height: 10vh;
+    background-color: #dd0f88;
+}
+
+header .link svg {
+    pointer-events: none;
+    width: 2.5vw;
+    height: auto;
+}
+
+.dropdown-link svg {
+    pointer-events: none;
+    width: 1.5vw;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav img {
+    width: calc(100vw / 6);
+    transform: translateY(-1vh);
+}
+
+.link {
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: #edcedc;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    margin: 0 2.5vw;
+    padding: 0;
+}
+
+.dropdown.active > .link, .link:hover, .dropdown-link:hover, .under-dropdown-link:hover { color: black }
+
+.dropdown { position: relative }
+
+.dropdown-menu {
+    z-index: 1;
+    position: absolute;
+    top: calc(100% + .25rem);
+    background-color: #edcedc;
+    padding: .75rem;
+    border-radius: .25rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    min-width: calc(100vw / 5);
+    max-width: calc(100vw / 3);
+}
+
+.dropdown-link, .under-dropdown-link {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: #777;
+    margin: 1vh 0;
+    font-size: 1.3em;
+}
+
+.under-dropdown-link {
+    font-size: 1em;
+    margin-left: 3vw;
+}
+
+.under-dropdown-menu { margin-bottom: 2vh }
+
+.dropdown-link svg { margin-right: 1.5vw }
+
+.dropdown-menu.right { right: 0 }
+
+.dropdown.active > .link + .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.shape-divider-bottom {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.shape-divider-bottom svg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 30px;
+    transform: rotateY(180deg);
+}
+
+.shape-divider-bottom .shape-fill { fill: #FEF6F7; }
