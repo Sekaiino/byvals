@@ -1,0 +1,61 @@
+.pricing h1 {
+    margin: 5vh 0;
+    text-align: center;
+}
+
+.main-menu {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.main-menu .services {
+    width: 60%;
+    margin: 5vh auto;
+}
+
+.services fieldset {
+    border-radius: 1vw;
+    border-color: #dd0f88;
+    background-color: #edcedc;
+}
+
+.services legend {
+    margin-left: 1.5vw;
+    font-size: 1.2em;
+    padding: .5vh .5vw;
+    background-color: #FEF6F7;
+    border-radius: 5px;
+    border-bottom: 2px solid #dd0f88;
+}
+
+.tarifs {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 90%;
+    margin: 1.5vh auto;
+}
+
+.tarifs p:first-child {
+    margin-right: 1vw;
+    white-space: nowrap;
+    width: max-content;
+}
+
+.tarifs hr {
+    width: 100%;
+    background-color: #dd0f88;
+    border: none;
+    height: 1px;
+}
+
+.tarifs p:last-child {
+    margin-left: 1vw;
+    min-width: 5vw;
+    height: 3vh;
+    background-color: #FEF6F7;
+    border-radius: 70% 80% 80% 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

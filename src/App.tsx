@@ -8,7 +8,10 @@ import './css/App.css';
 // Component
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+
+// Page
 import Home from "./pages/Home";
+import Pricing from "./pages/Pricing";
 
 function App() {
     return (
@@ -16,6 +19,7 @@ function App() {
             <Navbar/>
             <Routes>
                 <Route path="/" element={<Home />}></Route>
+                <Route path="/pricing" element={<Pricing />}></Route>
             </Routes>
             <Footer />
         </BrowserRouter>

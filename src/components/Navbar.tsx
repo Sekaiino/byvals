@@ -49,7 +49,7 @@ function Navbar() {
                             </ul>
                             <li><Link className="dropdown-link" to='/gallery'><CgShutterstock />Photos</Link></li>
                             <li><Link className="dropdown-link" to='/calendar'><CgCalendarToday />Calendrier</Link></li>
-                            <li><Link className="dropdown-link" to='pricing'><CgShoppingBag />Tarifs et services</Link></li>
+                            <li><Link className="dropdown-link" to='/pricing'><CgShoppingBag />Tarifs et services</Link></li>
                             <li><Link className="dropdown-link" to='/contact'><CgPen />Contactez-moi</Link></li>
                         </ul>
                     </aside>
