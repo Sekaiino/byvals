@@ -1,6 +1,7 @@
 header {
     min-height: 10vh;
     background-color: #dd0f88;
+    animation: translate-in-top .5s linear;
 }
 
 header .link svg {
@@ -86,6 +87,14 @@ nav img {
     pointer-events: auto;
 }
 
+.dropdown.left.active > .dropdown-menu > ul {
+    animation: translate-in-left .5s linear;
+}
+
+.dropdown.right.active > .dropdown-menu > ul {
+    animation: translate-in-right .5s linear;
+}
+
 .shape-divider-bottom {
     width: 100%;
     overflow: hidden;
@@ -101,3 +110,30 @@ nav img {
 }
 
 .shape-divider-bottom .shape-fill { fill: #FEF6F7; }
+
+@keyframes translate-in-left {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes translate-in-right {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes translate-in-top {
+    from {
+        transform: translateY(-200%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

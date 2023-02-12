@@ -53,9 +53,8 @@ function Footer() {
             <section className="pricing">
                 <Link to='/pricing'><CgShoppingBag /><h3>Tarifs et services</h3></Link>
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li><HashLink to="/pricing#ongles">Ongles</HashLink></li>
+                    <li><HashLink to="/pricing#massages">Massages</HashLink></li>
                 </ul>
             </section>
             <section className="contact">

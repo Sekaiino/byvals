@@ -9,7 +9,8 @@ import {
     CgShutterstock
 } from "react-icons/cg";
 import { Link } from "react-router-dom";
-import {HashLink} from "react-router-hash-link";
+import { HashLink } from "react-router-hash-link";
+import { gsap } from 'gsap';
 
 // CSS
 import '../css/Navbar.css';
@@ -26,7 +27,13 @@ function Navbar() {
         if (isDropdownButton) {
             currentDropdown = (e.target as HTMLButtonElement).closest("[data-dropdown]")
 
-            if(currentDropdown) currentDropdown.classList.add("active")
+            if(currentDropdown) {
+                currentDropdown.classList.add("active");
+                gsap.from('.dropdown-link', {
+                    translateZ: -100,
+                    duration: 1,
+                })
+            }
         }
 
         document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
@@ -38,7 +45,7 @@ function Navbar() {
     return(
         <header>
             <nav>
-                <aside className="dropdown" data-dropdown="">
+                <aside className="dropdown left" data-dropdown="">
                     <button className="link" data-dropdown-button=""><CgMenuLeft/></button>
                     <aside className="dropdown-menu" style={{marginLeft: "2.5vw"}}>
                         <ul>
@@ -50,12 +57,16 @@ function Navbar() {
                             <li><Link className="dropdown-link" to='/gallery'><CgShutterstock />Photos</Link></li>
                             <li><Link className="dropdown-link" to='/calendar'><CgCalendarToday />Calendrier</Link></li>
                             <li><Link className="dropdown-link" to='/pricing'><CgShoppingBag />Tarifs et services</Link></li>
+                            <ul className="under-dropdown-menu">
+                                <li><HashLink className="under-dropdown-link" to="/pricing#ongles">Ongles</HashLink></li>
+                                <li><HashLink className="under-dropdown-link" to="/pricing#massages">Massages</HashLink></li>
+                            </ul>
                             <li><Link className="dropdown-link" to='/contact'><CgPen />Contactez-moi</Link></li>
                         </ul>
                     </aside>
                 </aside>
                 <img src={require('../img/logo.png')} alt="logo"/>
-                <aside className="dropdown" data-dropdown="">
+                <aside className="dropdown right" data-dropdown="">
                     <button className="link" data-dropdown-button=""><CgProfile /></button>
                     <aside className="dropdown-menu right" style={{right: "0", marginRight: "2.5vw"}}>
                         <ul>

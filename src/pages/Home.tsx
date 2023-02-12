@@ -9,8 +9,11 @@ import {Link} from "react-router-dom";
 import pres1 from "../img/pres1.png";
 import pres2 from "../img/pres2.png";
 import pres3 from "../img/pres3.png";
+import useTranslateScaleAnimation from "../hooks/useTranslateScaleAnimation";
 
 function Home() {
+
+    useTranslateScaleAnimation(".entry-animation");
 
     document.addEventListener("click", e => {
         if(!e.target) return
@@ -43,17 +46,20 @@ function Home() {
 
     return (
         <main className="main-home" id="main-home">
-            <h1>B<span style={{color: '#dd0f88'}}>y</span>vals - prothésiste ongulaire</h1>
-            <p>Indépendante depuis le 01 juillet 2022, j'exerce depuis mon domicile ou le votre sur
-                Fléron et ses alentours. Prenez rendez-vous dès maintenant en
-                cliquant <Link to='/'>ici &#62;</Link></p>
+            <section className="entry-animation">
+                <h1>B<span style={{color: '#dd0f88'}}>y</span>vals - prothésiste ongulaire</h1>
+                <p>Indépendante depuis le 01 juillet 2022, j'exerce depuis mon domicile ou le votre sur
+                    Fléron et ses alentours. Prenez rendez-vous dès maintenant en
+                    cliquant <Link to='/'>ici &#62;</Link></p>
+            </section>
 
-            <div className="group" id="group">
+            <div className="group entry-animation" id="group">
                 <div className="item not-active" style={{backgroundImage: `url(${pres1})`}} data-item=""></div>
                 <div className="item not-active" style={{backgroundImage: `url(${pres2})`}} data-item=""></div>
                 <div className="item not-active" style={{backgroundImage: `url(${pres3})`}} data-item=""></div>
             </div>
-                <p>Plus d'images en cliquant <Link to="/">ici &#62;</Link></p>
+
+            <p className="entry-animation">Plus d'images en cliquant <Link to="/">ici &#62;</Link></p>
         </main>
     )
 }

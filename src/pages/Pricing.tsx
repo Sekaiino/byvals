@@ -11,7 +11,7 @@ function Pricing() {
         <main className="pricing">
             <h1>Tarifs et services</h1>
             <ul className="main-menu">
-                <li className="services">
+                <li className="services" id="ongles">
                     <fieldset>
                         <legend>Ongles</legend>
                         <ul>
@@ -32,7 +32,7 @@ function Pricing() {
                         </ul>
                     </fieldset>
                 </li>
-                <li className="services">
+                <li className="services" id="massages">
                     <fieldset>
                         <legend>Massage</legend>
                         <ul>

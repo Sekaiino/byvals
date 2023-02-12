@@ -1,6 +1,8 @@
 .pricing h1 {
     margin: 5vh 0;
     text-align: center;
+    font-weight: bold;
+    text-decoration: underline #dd0f88;
 }
 
 .main-menu {
