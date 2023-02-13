@@ -1,15 +1,30 @@
 // Library
 import Calendar from 'react-calendar';
-import { useState } from "react";
+import {useState, useRef, useEffect} from "react";
 import useTranslateScaleAnimation from '../hooks/useTranslateScaleAnimation';
+import {Link} from "react-router-dom";
+import Time from "../components/Time";
 
 // CSS
 import '../css/Calendar.css'
-import {Link} from "react-router-dom";
 export default function CalendarPage() {
     const [date, setDate] = useState(new Date());
+    const [showTime, setShowTime] = useState(false)
+
+    let calendarRef = useRef<any>(null);
 
     useTranslateScaleAnimation(".to-animate");
+
+    useEffect(() => {
+        let handler = (event: MouseEvent) => {
+            if(calendarRef === null || !calendarRef.current.contains(event.target)) {
+                setShowTime(false);
+            }
+        }
+        document.addEventListener("mousedown", handler);
+
+        return() => {document.removeEventListener("mousedown", handler)}
+    }, [])
 
     return(
         <main className="calendar-main">
@@ -31,9 +46,10 @@ export default function CalendarPage() {
                 <p className="to-animate">
                     Veuillez cliquer sur les dates qui vous intéresse afin de vérifier si un rendez-vous est disponible.<br/>
                     Veuillez noter que je ne prends pas de rendez-vous les dimanches et jours fériés.
-                    <hr/>
                 </p>
-                <Calendar className="to-animate" onChange={setDate} value={date} />
+                <hr className="to-animate"/>
+                <Calendar inputRef={calendarRef} className="to-animate" onChange={setDate} value={date} onClickDay={() => setShowTime(true)} />
+                <Time showTime={showTime} date={date}/>
                 <p className="to-animate">
                     Pour me contacter et/ou prendre tout renseignement supplémentaire, cliquez <Link to="/">ici &#62;</Link>
                 </p>
