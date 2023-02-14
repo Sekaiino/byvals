@@ -6,6 +6,17 @@
     align-items: center;
     justify-content: center;
 }
+
+.overlay {
+    width: 100%;
+    transition: ease-out .5s;
+}
+
+.to-blur {
+    filter: blur(5px);
+    transition: ease-in .5s;
+}
+
 .calendar-main section {
     width: 100%;
     display: flex;
@@ -199,6 +210,7 @@
 }
 
 .time .times {
+    z-index: 1;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -206,4 +218,25 @@
     width: 30%;
     background-color: #fef6f7;
     border-radius: 1vw;
+    border: #dd0f88 1px solid;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5vw;
+}
+
+.times p {
+    text-align: center;
+    margin: 1vh 1vw 5vh 1vw;
+}
+
+.times div {width: 100%;}
+
+.times div button {
+    width: 100%;
+    margin: 1vh 0;
+    height: 5vh;
+    border-radius: 1vw;
+    border-style: none;
 }
