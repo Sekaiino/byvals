@@ -17,10 +17,10 @@ function Pricing() {
                         <ul>
                             <li className="tarifs"><p>Manucure mains</p><hr/><p>10.5€</p></li>
                             <li className="tarifs"><p>Manugel mains Vernis Semi Permanent</p><hr/><p>25.5€</p></li>
-                            <li className="tarifs"><p>Capsule Américaine</p><hr/><p>50.5€</p></li>
-                            <li className="tarifs"><p>Capsule Américaine - retouche</p><hr/><p>45.5€</p></li>
-                            <li className="tarifs"><p>Ongles en résine</p><hr/><p>50.5€</p></li>
-                            <li className="tarifs"><p>Ongles en résine - retouche</p><hr/><p>45.5€</p></li>
+                            <li className="tarifs"><p>Capsule Américaine</p><hr/><p>35€</p></li>
+                            <li className="tarifs"><p>Capsule Américaine - retouche</p><hr/><p>30€</p></li>
+                            <li className="tarifs"><p>Ongles en résine</p><hr/><p>35€</p></li>
+                            <li className="tarifs"><p>Ongles en résine - retouche</p><hr/><p>30€</p></li>
                             <li className="tarifs"><p>Ongle cassé</p><hr/><p>2€</p></li>
                             <li className="tarifs"><p>Soins des pieds + vernis semi permanent</p><hr/><p>15+20€</p></li>
                             <li className="tarifs"><p>Vernis semi permanent pieds</p><hr/><p>20€</p></li>
